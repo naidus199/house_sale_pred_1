@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<!--------Do not touch the above code---->
+<body>
+ <div class="login">
+	<h1>Pension Calculator </h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post"> <input type="number" name="basic" placeholder="Enter your basic pay" required="required" />
+    <input type="number" name="area" placeholder="Enter your area" required="required" />
+		<input type="number" name="bedrooms" placeholder="Enter your bedrooms" required="required" />
+		<input type="number" name="bathrooms" placeholder="Enter bathrooms" required="required" />
+		<input type="number" name="stories" placeholder="Enter stories" required="required" />
+    <input type="number" name="mainroad" placeholder="Enter mainroad" required="'required" />
+    <input type="number" name="guestroom" placeholder="Enter guestroom" required="'required" />
+    <input type="number" name="basement" placeholder="Enter basement" required="'required" />
+    <input type="number" name="hotwaterheating" placeholder="Enter hotwaterheating" required="'required" />
+    <input type="number" name="airconditioning" placeholder="Enter airconditioning" required="'required" />
+    <input type="number" name="parking" placeholder="Enter parking" required="'required" />
+    <input type="number" name="prefarea" placeholder="Enter prefarea" required="'required" />
+    <input type="number" name="semi_furnished" placeholder="Enter semi_furnished" required="'required" />
+    <input type="number" name="unfurnished" placeholder="Enter unfurnished" required="'required" />
+    
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict House Price </button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+
+ </div>
+
+
+</body>
+</html>
+
